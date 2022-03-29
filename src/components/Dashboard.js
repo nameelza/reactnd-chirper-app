@@ -6,7 +6,14 @@ class Dashboard extends Component {
       console.log(this.props)
     return (
       <div>
-        <h1>Dashboard</h1>
+        <h3 classname="center">Your Timeline</h3>
+        <ul classname="dashboard-list">
+          {this.props.tweetIds.map((id) => {
+            <li key={id}>
+              <div>TWEET ID: {id}</div>
+            </li>
+          })}
+        </ul>
       </div>
     );
   }

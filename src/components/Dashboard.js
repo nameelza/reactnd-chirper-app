@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 class Dashboard extends Component {
   render() {
+      console.log(this.props)
     return (
       <div>
         <h1>Dashboard</h1>

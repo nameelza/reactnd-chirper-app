@@ -11,7 +11,7 @@ class Tweet extends Component {
   toParent = (e, id) => {
     e.preventDefault();
     // todo: Redirect to the parent Tweet
-  }
+  };
   render() {
     const { tweet } = this.props;
 
@@ -34,15 +34,19 @@ class Tweet extends Component {
     console.log(this.props);
     return (
       <div className="tweet">
-        <img src={avatar} alt={`Avatar of ${name}`} className="avatar"/>
+        <img src={avatar} alt={`Avatar of ${name}`} className="avatar" />
         <div className="tweet-info">
-            <span>{name}</span>
-            <div>{formatDate(timestamp)}</div>
-            {parent && (
-              <button className="replying-to" onClick={(e) => this.toParent(e, parent.id)}>
-                Replying to @{parent.author}
-              </button>
-            )}
+          <span>{name}</span>
+          <div>{formatDate(timestamp)}</div>
+          {parent && (
+            <button
+              className="replying-to"
+              onClick={(e) => this.toParent(e, parent.id)}
+            >
+              Replying to @{parent.author}
+            </button>
+          )}
+          <p>{text}</p>
         </div>
       </div>
     );

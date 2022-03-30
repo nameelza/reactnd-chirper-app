@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { handleInitalData } from "../actions/shared";
+import { handleInitialData } from "../actions/shared";
 import Dashboard from "./Dashboard";
 
 class App extends Component {
   componentDidMount() {
-    this.props.dispatch(handleInitalData);
+    this.props.dispatch(handleInitialData());
   }
   render() {
+    console.log("props", this.props);
     return (
       <div>
         {this.props.loading === true ? (
@@ -20,7 +21,7 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({ authedUser }) {
+function mapStateToProps({ authedUser}) {
   return {
     loading: authedUser === null,
   };

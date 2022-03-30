@@ -9,19 +9,11 @@ class App extends Component {
   }
   render() {
     console.log("props", this.props);
-    return (
-      <div>
-        {this.props.loading === true ? (
-          <h3 className="center">Loading...</h3>
-        ) : (
-          <Dashboard />
-        )}
-      </div>
-    );
+    return <div>{this.props.loading === true ? null : <Dashboard />}</div>;
   }
 }
 
-function mapStateToProps({ authedUser}) {
+function mapStateToProps({ authedUser }) {
   return {
     loading: authedUser === null,
   };

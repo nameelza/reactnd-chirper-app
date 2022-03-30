@@ -4,6 +4,7 @@ import { formatTweet } from "../utils/helpers";
 
 class Tweet extends Component {
   render() {
+      console.log(this.props)
     return (
       <div className="tweet">
         <h3>Tweet</h3>
@@ -20,4 +21,4 @@ function mapStateToProps({ authedUser, tweets, users }, { id }) {
   };
 }
 
-export default connect()(Tweet);
+export default connect(mapStateToProps)(Tweet);

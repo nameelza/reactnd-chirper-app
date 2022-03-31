@@ -9,7 +9,6 @@ import {
 import { handleToggleTweet } from "../actions/tweets";
 
 class Tweet extends Component {
-
   toParent = (e, id) => {
     e.preventDefault();
     // todo: Redirect to the parent Tweet
@@ -17,14 +16,16 @@ class Tweet extends Component {
 
   handleLike = (e) => {
     e.preventDefault();
-    
+
     const { dispatch, tweet, authedUser } = this.props;
 
-    dispatch(handleToggleTweet({
+    dispatch(
+      handleToggleTweet({
         id: tweet.id,
         hasLiked: tweet.hasLiked,
-        authedUser
-    }))
+        authedUser,
+      })
+    );
   };
 
   render() {
@@ -34,16 +35,8 @@ class Tweet extends Component {
       return <p>This tweet doesn't exist</p>;
     }
 
-    const {
-      name,
-      avatar,
-      timestamp,
-      text,
-      hasLiked,
-      likes,
-      replies,
-      parent,
-    } = tweet;
+    const { name, avatar, timestamp, text, hasLiked, likes, replies, parent } =
+      tweet;
 
     console.log(this.props);
     return (

@@ -13,8 +13,36 @@ class NewTweet extends Component {
     });
   };
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { text } = this.state;
+
+    //  todo: add tweet to the state
+
+    console.log("New Tweet: ", text);
+
+    this.setState(() => {
+      text: "";
+    });
+  };
+
   render() {
-    return <div>New Tweet</div>;
+    const { text } = this.state;
+    return (
+      <div>
+        <h3 className="center">Compose new Tweet</h3>
+        <form className="new-tweet" onSubmit={this.handleSubmit}>
+          <textarea
+            placeholder="What's happening?"
+            value={text}
+            onChange={this.handleChange}
+            className="textarea"
+            maxLength={280}
+          />
+          
+        </form>
+      </div>
+    );
   }
 }
 

@@ -8,9 +8,10 @@ class NewTweet extends Component {
   handleChange = (e) => {
     const text = e.target.value;
 
-    this.setState(() => {
-      text;
-    });
+    this.setState(() => ({
+      text,
+    }));
+    console.log("change", this.state);
   };
 
   handleSubmit = (e) => {
@@ -21,9 +22,9 @@ class NewTweet extends Component {
 
     console.log("New Tweet: ", text);
 
-    this.setState(() => {
-      text: "";
-    });
+    // this.setState(() => {
+    //   text: "";
+    // });
   };
 
   render() {
@@ -39,7 +40,6 @@ class NewTweet extends Component {
             className="textarea"
             maxLength={280}
           />
-          
         </form>
       </div>
     );

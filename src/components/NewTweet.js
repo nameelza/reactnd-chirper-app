@@ -22,9 +22,9 @@ class NewTweet extends Component {
 
     console.log("New Tweet: ", text);
 
-    this.setState(() => {
-      text: "";
-    });
+    this.setState(() => ({
+      text: ""
+    }));
   };
 
   render() {

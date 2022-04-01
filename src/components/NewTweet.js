@@ -29,6 +29,7 @@ class NewTweet extends Component {
 
   render() {
     const { text } = this.state;
+    const tweetLeft = 280 - text.length;
     return (
       <div>
         <h3 className="center">Compose new Tweet</h3>
@@ -40,6 +41,16 @@ class NewTweet extends Component {
             className="textarea"
             maxLength={280}
           />
+          {tweetLeft <= 100 && (
+            <div className="tweet-length">
+              {tweetLeft}
+            </div>
+          )}
+          <button
+            className="btn"
+            type="submit"
+            disabled={text === ''}
+          >Submit</button>
         </form>
       </div>
     );

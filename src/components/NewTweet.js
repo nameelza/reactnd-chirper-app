@@ -22,14 +22,15 @@ class NewTweet extends Component {
 
     console.log("New Tweet: ", text);
 
-    // this.setState(() => {
-    //   text: "";
-    // });
+    this.setState(() => {
+      text: "";
+    });
   };
 
   render() {
     const { text } = this.state;
     const tweetLeft = 280 - text.length;
+    // todo: redirect to / if submitted
     return (
       <div>
         <h3 className="center">Compose new Tweet</h3>

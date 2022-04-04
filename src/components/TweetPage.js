@@ -12,18 +12,18 @@ class TweetPage extends Component {
         <NewTweet id={id} />
         {replies.length !== 0 && <h3 className="center">Replies</h3>}
         <ul>
-          {replies.map((replyId) => {
+          {replies.map((replyId) => (
             <li key={replyId}>
               <Tweet id={replyId} />
             </li>
-          })}
+          ))}
         </ul>
       </div>
     );
   }
 }
 
-function mapStateToProps({ authedUser, users, tweets }, props) {
+function mapStateToProps({ tweets }, props) {
   const { id } = props.match.params;
 
   return {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { handleAddTweet } from "../actions/tweets";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 class NewTweet extends Component {
   state = {
@@ -36,7 +36,7 @@ class NewTweet extends Component {
     const tweetLeft = 280 - text.length;
     
     if (toHome === true) {
-      return <Redirect to="/" />;
+      return <Navigate to="/" />;
     }
     
     return (
